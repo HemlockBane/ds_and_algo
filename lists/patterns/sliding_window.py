@@ -1,5 +1,6 @@
 from typing import List
 
+
 # Given an array, find the average of all subarrays of ‘K’ contiguous elements in it.
 # Inputs: Arr, K
 # Output: Arr of subarray averages
@@ -18,7 +19,7 @@ def k_avg_subarrays_naive(arr: List[int], size: int):
         curr_sum = 0
         for j in range(i, i + size):
             curr_sum = curr_sum + arr[j]
-        avg = curr_sum/size
+        avg = curr_sum / size
         averages.append(avg)
     return averages
 
@@ -43,7 +44,8 @@ def k_avg_subarrays_optimized(arr: List[int], size: int):
             window_start = window_start + 1
     return averages
 
-# Given an array of positive numbers and a positive number ‘k,’ 
+
+# Given an array of positive numbers and a positive number ‘k,’
 # find the maximum sum of any contiguous subarray of size ‘k
 # Inputs: array, size
 # Output: max sum: int
@@ -59,6 +61,7 @@ def k_max_sum_subarrays_naive(arr: List[int], size: int):
         if curr_sum > max_sum:
             max_sum = curr_sum
     return max_sum
+
 
 # Time complexity: O(n), Space complexity: O(1)
 def k_max_sum_subarrays_optimised(arr: List[int], size: int) -> int:
@@ -101,10 +104,11 @@ def smallest_subarray_sum_naive(arr: List[int], target: int):
                 temp_len = len(arr[i:j + 1])
                 if smallest_len != 0:
                     smallest_len = min(temp_len, smallest_len)
-                else: 
+                else:
                     smallest_len = temp_len
     return smallest_len
- 
+
+
 # Outer loop through the list: each index is a window end
 # Calculate the window sum
 # If the window sum is greater than or equal to target
@@ -131,5 +135,3 @@ def smallest_subarray_sum_optimised(arr: List[int], target: int):
             window_start = window_start + 1
 
     return smallest_len
-
-

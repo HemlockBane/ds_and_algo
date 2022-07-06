@@ -47,21 +47,36 @@ def two_sum_optimised(nums: List[int], target: int) -> List[int]:
 # Time complexity: O(n2); Space complexity: O(1)
 def get_max_profit_naive(prices: List[int]) -> int:
     max_profit = 0
-    for i in range(len(prices)-1):
-        for j in range(i+1, len(prices)):
+    for i in range(len(prices) - 1):
+        for j in range(i + 1, len(prices)):
             profit = prices[j] - prices[i]
-            if profit > max_profit:
-                max_profit = profit
+            max_profit = max(max_profit, profit)
     return max_profit
 
+
+# We basically look for the lowest price to buy (keep comparing current price with next price),
+# then find a good selling price
+
+# Time complexity: O(n); Space complexity: O(1)
 def get_max_profit_optimised(prices: List[int]) -> int:
     max_profit = 0
-    pass
+    if len(prices) < 2:
+        return 0
 
-res = get_max_profit_naive([7,6,4,3,1])
-print(res)
+    min_price = prices[0]
+    for right_ptr in range(len(prices)):
+        curr_price = prices[right_ptr]
+        if curr_price < min_price:
+            min_price = curr_price
+        else:
+            profit = curr_price - min_price
+            max_profit = max(max_profit, profit)
 
-#Given an array of positive integers nums and a positive integer target, 
+    return max_profit
+
+
+
+# Given an array of positive integers nums and a positive integer target,
 # return the minimal length of a contiguous subarray [numsl, numsl+1, ..., numsr-1, numsr] 
 # of which the sum is greater than or equal to target. 
 # If there is no such subarray, return 0 instead.
@@ -77,4 +92,3 @@ print(res)
 
 # Input: arr: List[int], target: int
 # Output: min len of contig subarrays with sum >= target
-
