@@ -55,7 +55,7 @@ def bubble_sort_optimised(arr: List):
 # -- If element at current inner loop iteration < element at min idx, update min idx
 # - swap element at current outer loop iteration with element at min idx
 
-# Runtime: O(n)
+# Runtime: O(n ^ 2)
 
 def selection_sort(arr: List):
     for i in range(len(arr) - 1):
