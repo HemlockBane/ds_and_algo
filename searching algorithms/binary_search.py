@@ -1,7 +1,7 @@
 from typing import List
 
 
-# Binary search is an optimised way of search for a value in a sorted array
+# Binary search is an optimised way of searching for a value in a sorted array
 # It's a lot like using two pointers moving in opposite directions
 # The idea is to continuously find the midpoint of the array, then compare our target value
 # with the one at our midpoint.
@@ -10,7 +10,7 @@ from typing import List
 # - If our target value is equal, we have found our target
 # We do this until the looping conditions are no longer met
 
-# Input : List or String
+# Input : List of String
 # Output : Index of character (return - 1, if no matching character is found)
 # Runtime: O(logn)
 def binary_search(arr: List[str], target: str) -> int:
@@ -24,6 +24,6 @@ def binary_search(arr: List[str], target: str) -> int:
         elif arr[mid_ptr] < target:
             start_ptr = start_ptr + 1
         else:
-            end_ptr = end_ptr + 1
+            end_ptr = end_ptr - 1
 
     return -1

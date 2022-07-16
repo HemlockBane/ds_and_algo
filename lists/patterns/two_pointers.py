@@ -1,7 +1,7 @@
 from typing import List
 
 
-# Items are sorted, use in place sorting, no aux data structure allowed
+# Items are sorted, use in place sorting_algorithms, no aux data structure allowed
 # Input: a list of integers
 # Output: the new length of the list without duplicates
 # O(n)
