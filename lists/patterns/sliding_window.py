@@ -74,7 +74,7 @@ def k_max_sum_subarrays_optimised(arr: List[int], size: int) -> int:
 
         if window_end >= size - 1:
             max_sum = max(window_sum, max_sum)
-            window_sum = window_sum - arr[window_end]
+            window_sum = window_sum - arr[window_start]
             window_start = window_start + 1
     return max_sum
 

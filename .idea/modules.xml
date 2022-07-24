@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ds_and_algo_prep.iml" filepath="$PROJECT_DIR$/.idea/ds_and_algo_prep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../gs_hackerrank/.idea/gs_hackerrank.iml" filepath="$PROJECT_DIR$/../gs_hackerrank/.idea/gs_hackerrank.iml" />
     </modules>
   </component>
 </project>
