@@ -28,9 +28,9 @@ def is_valid(par_str: str) -> bool:
         else:
             if len(stack) == 0:
                 return False
-        open_brac = stack.pop()
-        if char != par_map[open_brac]:
-            return False
+            open_brac = stack.pop()
+            if char != par_map[open_brac]:
+                return False
     return stack == []
 
 

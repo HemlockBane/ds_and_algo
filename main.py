@@ -4,9 +4,24 @@ from typing import List
 from lists.patterns import two_pointers as tp
 from lists import study_questions
 from lists.patterns import sliding_window as sw
+from queues.implementation.queue_with_stacks import QueueWithStacks
 from sorting_algorithms import basic_sorting_algo
+from stacks.study_questions import is_valid
 
-sw.k_max_sum_subarrays_naive([2, 3, 4, 1, 5], 2)
+
+queue = QueueWithStacks()
+queue.enqueue("Ray")
+queue.enqueue("Brian")
+queue.enqueue("Eric")
+
+print(queue.length())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.length())
+
+
+
 
 
 
