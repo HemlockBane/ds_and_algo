@@ -9,6 +9,7 @@ from sorting_algorithms import basic_sorting_algo
 from stacks.study_questions import is_valid
 
 
+
 queue = QueueWithStacks()
 queue.enqueue("Ray")
 queue.enqueue("Brian")
@@ -19,9 +20,6 @@ print(queue.dequeue())
 print(queue.dequeue())
 print(queue.dequeue())
 print(queue.length())
-
-
-
 
 
 
