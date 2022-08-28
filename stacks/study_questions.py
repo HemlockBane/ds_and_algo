@@ -1,3 +1,6 @@
+from typing import List
+
+
 # Check if a given parentheses string is valid
 #
 # Input: par: string
@@ -34,4 +37,35 @@ def is_valid(par_str: str) -> bool:
     return stack == []
 
 
+# Find the number of indices till you find a warmer temperature
 
+# We use a stack to store the future items
+# We use a list to store our answers
+#
+# We traverse the temperature list in reverse:
+# - We keep checking if our stack has values and if our current temperature
+# is greater than or equal to our next value in the stack. If true, pop the stack
+# - We check if the stack is not empty and if our current temperature is less than
+# the next value in the stack. If true, find the difference between
+# the stack index and the index of the current temperature
+# - Add the current index to the stack
+#
+# Return results
+
+def get_daily_temperatures(temps: List[int]) -> List[int]:
+    arr_len = len(temps)
+
+    stack = []
+    results = [0] * arr_len
+
+    for curr_idx in range(arr_len - 1, -1, -1):
+        while len(stack) != 0 and temps[curr_idx] >= temps[stack[-1]]:
+            stack.pop()
+
+        if len(stack) != 0 and temps[curr_idx] < temps[stack[-1]]:
+            diff = stack[-1] - curr_idx
+            results[curr_idx] = diff
+
+        stack.append(curr_idx)
+
+    return results
