@@ -22,8 +22,8 @@ def binary_search(arr: List[str], target: str) -> int:
         if arr[mid_ptr] == target:
             return mid_ptr
         elif arr[mid_ptr] < target:
-            start_ptr = start_ptr + 1
+            start_ptr = mid_ptr + 1
         else:
-            end_ptr = end_ptr - 1
+            end_ptr = mid_ptr - 1
 
     return -1
